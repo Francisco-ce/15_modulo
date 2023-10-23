@@ -1,0 +1,22 @@
+// variaveis 
+
+$corPrincipal: #eee;
+$corDoTexto: #111;
+
+
+body {
+    background-color: $corPrincipal;
+}
+
+header {
+    background-color: $corPrincipal;
+
+    h1 {
+        color: $corDoTexto;
+    }
+}
+
+//mesmo código de cima porem como o scss aceita, bem mais fácil de entender
+// header h1 {
+//     color: red;
+// }
