@@ -9,4 +9,14 @@ header h1 {
   color: #111;
 }
 
+button {
+  padding: 16px;
+  background-color: #111;
+  color: #eee;
+}
+button:hover {
+  background-color: yellow;
+  color: #111;
+}
+
 /*# sourceMappingURL=main.css.map */

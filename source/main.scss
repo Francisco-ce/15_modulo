@@ -1,7 +1,7 @@
 // variaveis 
 
 $corPrincipal: #eee;
-$corDoTexto: #111;
+$corSecundaria: #111;
 
 
 body {
@@ -12,7 +12,7 @@ header {
     background-color: $corPrincipal;
 
     h1 {
-        color: $corDoTexto;
+        color: $corSecundaria   ;
     }
 }
 
@@ -20,3 +20,16 @@ header {
 // header h1 {
 //     color: red;
 // }
+
+button {
+    padding: 16px;
+    background-color: $corSecundaria;
+    color: $corPrincipal;
+
+    &:hover {
+        background-color: yellow;
+        color: $corSecundaria;
+    }
+}
+
+//formato de colocar hover nas tags pelo scss
