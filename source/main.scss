@@ -1,35 +1,7 @@
-// variaveis 
-
-$corPrincipal: #eee;
-$corSecundaria: #111;
-
+@use 'config/reset';
+@use 'config/cores';
+@use 'secoes/produtos';
 
 body {
-    background-color: $corPrincipal;
+  background-color: cores.$corDeFundo;  
 }
-
-header {
-    background-color: $corPrincipal;
-
-    h1 {
-        color: $corSecundaria   ;
-    }
-}
-
-//mesmo código de cima porem como o scss aceita, bem mais fácil de entender
-// header h1 {
-//     color: red;
-// }
-
-button {
-    padding: 16px;
-    background-color: $corSecundaria;
-    color: $corPrincipal;
-
-    &:hover {
-        background-color: yellow;
-        color: $corSecundaria;
-    }
-}
-
-//formato de colocar hover nas tags pelo scss
