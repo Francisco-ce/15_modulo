@@ -1,10 +1,22 @@
 @use 'config/reset';
+@use 'config/variavel';
+@use 'sass:math'; //função do sass para calculo 
+
+//criando mixin
 @mixin elementoForm() {
   padding:8px;
   display: block;
   width: 100%;
   margin-bottom: 16px;
 }
+
+//criando função
+
+@function pixelParaEm($salvoEmPixel, $contextoEmPixel: 16px) {
+  @return math.div($salvoEmPixel,$contextoEmPixel)+em; //return para retornar a resposta ; div de divisão (numerador/deniminador);concatenar com a unidade de medida
+}
+
+
 
 body {
   background-color: #eee;
@@ -18,8 +30,9 @@ body {
 
 header {
   padding: 16px 0;
-  background-color: yellow;
+  background-color: variavel.$corPrincipal;
   text-align: center;
+  color: #fff;
   
 }
 
@@ -29,29 +42,62 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  max-width: 760px;
 
   //calc faz com que o cálculo seja realizado
+
+  h2 {
+    font-size: pixelParaEm(48px);
+    text-align: center;
+  }
 
   form {
     width: 100%;
     max-width: 480px;
     margin-top:40px;
+
+    label{
+      font-weight: bold;
+      
+    }
     
     input {
       @include elementoForm();
       background-color: transparent;
       border: none;
-      border-bottom: 1px solid #000;
+      border-bottom: 3px solid variavel.$corPrincipal;
+      cursor: pointer;
+
     }
 
     button {
       @include elementoForm();
+      background-color: variavel.$corSecundaria;
+      border: none;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #fff;
+
+      &:hover {
+        background-color: darken(variavel.$corSecundaria, 15%);
+        // background-color: lighten(variavel.$corSecundaria, 15%);
+      }
     }
     
     
 }
 
 }
+
+@media screen and (max-width: variavel.$mobile) {
+  .container {
+    max-width: 80%;
+  }
+  }
+
+  // medida alvo /medida atual 
+  //
 
 
 
